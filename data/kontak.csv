@@ -1,0 +1,15 @@
+kunci,nilai,keterangan
+whatsapp_pengaduan,,"Nomor WhatsApp layanan pengaduan, awalan 62 (contoh format: 6281234567890)"
+telepon,,Nomor telepon kantor (opsional)
+email,,Alamat surel resmi (opsional)
+email_layanan_data,,"Surel resmi layanan permintaan data (SOP-04). Bila kosong, dipakai kunci email"
+whatsapp_layanan_data,,"Nomor WhatsApp layanan permintaan data, awalan 62. Bila kosong, dipakai whatsapp_pengaduan"
+form_permintaan_data,,"Tautan Google Form permintaan data (opsional, diawali https://)"
+form_survei_kepuasan,,"Tautan Google Form survei kepuasan layanan (SOP-04 langkah 6, diawali https://)"
+sk_sop_nomor,,"Nomor Keputusan Bupati tentang SOP Pengelolaan Data SIF POINT BATARA, misal 188.45/xxx/2026"
+sk_sop_tanggal,,"Tanggal penetapan Keputusan Bupati tentang SOP, misal 15 Oktober 2026"
+sk_tim_nomor,,Nomor Keputusan Bupati tentang Pembentukan Tim Teknis SIF POINT BATARA
+sk_tim_tanggal,,Tanggal penetapan Keputusan Bupati tentang Tim Teknis
+domain_resmi,,Domain resmi Pemerintah Kabupaten untuk SIF POINT BATARA dari Diskominfo (SOP-03 langkah 4)
+portal_satu_data,,"Tautan portal Satu Data daerah (opsional, diawali https://)"
+form_pendaftaran_mitra,,"Tautan Google Form pendaftaran mitra PAHANDEP INVESTOR (SOP-05, opsional, diawali https://). Surel dan WhatsApp memakai email_layanan_data dan whatsapp_layanan_data"

@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Admin · SIF POINT BATARA</title>
+<style>
+:root{--bg:#03100A;--bg2:#061A10;--card:rgba(14,40,26,.72);--ink:#E8F3EA;--muted:#93AE9B;--line:rgba(120,220,160,.2);--em:#2EE59D;--gold:#F2C14E;--bad:#FF6B6B;--warn:#F2A93B;color-scheme:dark;
+ --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(var(--bg),var(--bg2));color:var(--ink);font:15px/1.55 var(--sans);min-height:100vh}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+header{border-bottom:1px solid var(--line);background:rgba(3,22,12,.9);position:sticky;top:0;z-index:5}
+header .wrap{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding-block:12px}
+header b{color:var(--gold);letter-spacing:.06em}header small{color:var(--muted);display:block}
+header .sp{flex:1}
+nav{display:flex;gap:4px;overflow-x:auto;border-bottom:1px solid var(--line);background:rgba(3,16,10,.85)}
+nav button{flex:none;background:none;border:0;border-bottom:2px solid transparent;color:var(--muted);padding:12px 14px;font:600 14px var(--sans);cursor:pointer}
+nav button[aria-selected=true]{color:var(--gold);border-bottom-color:var(--gold)}
+main{padding-block:20px 60px;display:grid;gap:16px}
+h2{margin:0;font-size:20px}h3{margin:0 0 8px;font-size:16px}p{margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:12px;min-width:0}
+.mut{color:var(--muted);font-size:13px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:end}
+label{display:grid;gap:4px;font-size:13px;color:var(--muted)}
+input,select,textarea{background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:8px;color:var(--ink);padding:8px 10px;font:inherit;min-width:0}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--em);outline-offset:0}
+textarea{resize:vertical}
+button.b{background:linear-gradient(90deg,var(--gold),#FFE29A);color:#03100A;border:0;border-radius:8px;padding:9px 16px;font:700 14px var(--sans);cursor:pointer}
+button.g{background:none;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 14px;font:600 13px var(--sans);cursor:pointer}
+button.g:hover{border-color:var(--em);color:var(--em)}button.r{color:var(--bad)}
+button:disabled{opacity:.5;cursor:not-allowed}
+.chip{display:inline-block;padding:2px 9px;border-radius:99px;border:1px solid currentColor;font-size:12px;font-weight:700}
+.ok{color:var(--em)}.warn{color:var(--warn)}.bad{color:var(--bad)}
+.tbl{overflow:auto;max-height:68vh;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{position:sticky;top:0;background:#0B2A1A;color:var(--em);text-align:left;padding:7px 8px;white-space:nowrap;z-index:1}
+td{padding:3px 4px;border-top:1px solid rgba(255,255,255,.05);vertical-align:top}
+td input,td select,td textarea{width:100%;min-width:110px;padding:5px 7px;font-size:13px}
+td.n{color:var(--muted);text-align:center;min-width:34px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.mc{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:rgba(0,0,0,.2);display:grid}
+.mc img,.mc .ph{width:100%;aspect-ratio:4/3;object-fit:cover;background:#0A1F14;display:grid;place-items:center;color:var(--muted);font-size:12px}
+.mc div.i{padding:10px;display:grid;gap:6px}
+.pv{max-width:260px;border-radius:10px;border:1px solid var(--line);display:block}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#0B2A1A;border:1px solid var(--em);padding:10px 16px;border-radius:10px;z-index:30;max-width:90vw}
+.toast.bad{border-color:var(--bad)}
+.k{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.k div{border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}.k b{display:block;font:800 22px var(--mono);color:var(--em)}
+@media(max-width:700px){.k{grid-template-columns:1fr}}
+.kt input{width:100%;text-align:right;font-family:var(--mono)}
+.kt td:first-child{text-align:center;color:var(--muted)}
+pre{margin:0;white-space:pre-wrap;font:12px var(--mono);color:var(--muted)}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div><b>SIF POINT BATARA</b><small>Admin konten · mode statis (Hostinger / GitHub Pages / Vercel)</small></div><span class="sp"></span><span id="dirty" class="chip ok">Tidak ada perubahan</span><a class="g" style="color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:7px 12px;font-size:13px" href="index.html" target="_blank" rel="noopener">Buka website</a></div></header>
+<nav class="wrap" id="nav" role="tablist" aria-label="Menu admin"></nav>
+<main class="wrap" id="main"><p class="mut">Memuat data…</p></main>
+
+<script>
+(()=>{
+'use strict';
+/* ======================= util ======================= */
+const $=(s,r=document)=>r.querySelector(s);
+const el=(t,a,...k)=>{const e=document.createElement(t);for(const[x,v]of Object.entries(a||{})){if(v==null||v===false)continue;if(x==='class')e.className=v;else if(x==='text')e.textContent=v;else if(x.startsWith('on'))e.addEventListener(x.slice(2),v);else e.setAttribute(x,v===true?'':v)}for(const c of k.flat())if(c!=null&&c!==false)e.append(c.nodeType?c:document.createTextNode(String(c)));return e};
+const toast=(m,bad)=>{const t=el('div',{class:'toast'+(bad?' bad':''),role:'status',text:m});document.body.append(t);setTimeout(()=>t.remove(),bad?6500:3200)};
+const slug=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40)||'mitra';
+function csvParse(t){t=t.replace(/^﻿/,'');const rows=[];let r=[],f='',q=false;for(let i=0;i<t.length;i++){const c=t[i];
+  if(q){if(c==='"'){if(t[i+1]==='"'){f+='"';i++}else q=false}else f+=c}
+  else if(c==='"')q=true;else if(c===','){r.push(f);f=''}else if(c==='\n'||c==='\r'){if(c==='\r'&&t[i+1]==='\n')i++;r.push(f);f='';rows.push(r);r=[]}else f+=c}
+  if(f!==''||r.length){r.push(f);rows.push(r)}
+  return rows.filter(x=>x.length>1||(x.length===1&&x[0]!==''))}
+const csvCell=v=>{v=String(v==null?'':v);return /[",\n\r]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v};
+const csvOut=(h,rows)=>[h.map(csvCell).join(','),...rows.map(r=>h.map(c=>csvCell(r[c])).join(','))].join('\n')+'\n';
+const DATASETS=[['peluang','Peluang investasi'],['titik','Titik peluang (peta)'],['pabrik','Pabrik hilirisasi'],['kecamatan','Profil kecamatan'],['kontak','Kontak & tautan layanan'],['produksi','Produksi komoditas'],['realisasi','Realisasi investasi'],['mitra','Mitra usaha (Pahandep)'],['triwulan','Arus kas triwulan'],['konten','Teks halaman & menu']];
+const HEAD0={triwulan:['komoditas','tahun_ke','triwulan','arus_kas','periode','sumber','status_data','nomor_ba','tanggal_mutakhir','terbit'],konten:['selektor','teks','terbit'],mitra:['kode','nama_usaha','bentuk_usaha','sektor','produk_komoditas','kapasitas','kecamatan','desa','skala_usaha','kebutuhan_kemitraan','uraian_kemitraan','foto_produk','persetujuan_pelaku_usaha','sumber','periode','satuan','wilayah','perangkat_daerah','status_data','nomor_ba','tanggal_mutakhir','terbit']};
+const today=()=>new Date().toISOString().slice(0,10);
+
+/* ======================= state ======================= */
+const S={ds:{},orig:{},photos:{},origPhotos:{},tab:'ringkasan',gh:{owner:'',repo:'',branch:'main',token:''},loadErr:[]};
+function dirtyFiles(){const out=[];for(const[k]of DATASETS){const d=S.ds[k];if(!d)continue;const t=csvOut(d.h,d.rows);if(t!==S.orig[k])out.push({path:'data/'+k+'.csv',text:t,k})}
+  for(const[p,v]of Object.entries(S.photos))if(v)out.push({path:p,b64:v.b64,blob:v.blob,photo:true});return out}
+function refreshDirty(){const n=dirtyFiles().length,e=$('#dirty');e.textContent=n?n+' berkas berubah (belum terbit)':'Tidak ada perubahan';e.className='chip '+(n?'warn':'ok')}
+addEventListener('beforeunload',e=>{if(dirtyFiles().length){e.preventDefault();e.returnValue=''}});
+
+async function loadAll(){
+  for(const[k]of DATASETS){
+    try{const r=await fetch('data/'+k+'.csv',{cache:'no-store'});if(!r.ok)throw new Error(r.status);const t=await r.text();const p=csvParse(t);
+      const h=p.length?p[0]:(HEAD0[k]||[]);const rows=p.slice(1).map(x=>Object.fromEntries(h.map((c,i)=>[c,x[i]==null?'':x[i]])));
+      if(HEAD0[k])HEAD0[k].forEach(c=>{if(!h.includes(c))h.push(c)});
+      S.ds[k]={h,rows};S.orig[k]=csvOut(h,rows)}
+    catch(e){S.loadErr.push(k);S.ds[k]={h:(HEAD0[k]||[]).slice(),rows:[]};S.orig[k]=null}}
+}
+
+/* ======================= ZIP (store) ======================= */
+const CRC=(()=>{const t=new Uint32Array(256);for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0}return b=>{let c=0xFFFFFFFF;for(let i=0;i<b.length;i++)c=t[(c^b[i])&255]^(c>>>8);return (c^0xFFFFFFFF)>>>0}})();
+function makeZip(files){const enc=new TextEncoder(),parts=[],cd=[];let off=0;const d=new Date(),dt=((d.getFullYear()-1980)<<9|(d.getMonth()+1)<<5|d.getDate()),tm=(d.getHours()<<11|d.getMinutes()<<5|d.getSeconds()>>1);
+  for(const f of files){const nm=enc.encode(f.path),data=f.bytes,crc=CRC(data);
+    const lh=new DataView(new ArrayBuffer(30));lh.setUint32(0,0x04034b50,true);lh.setUint16(4,20,true);lh.setUint16(6,0x0800,true);lh.setUint16(8,0,true);lh.setUint16(10,tm,true);lh.setUint16(12,dt,true);lh.setUint32(14,crc,true);lh.setUint32(18,data.length,true);lh.setUint32(22,data.length,true);lh.setUint16(26,nm.length,true);lh.setUint16(28,0,true);
+    parts.push(lh.buffer,nm,data);
+    const ch=new DataView(new ArrayBuffer(46));ch.setUint32(0,0x02014b50,true);ch.setUint16(4,20,true);ch.setUint16(6,20,true);ch.setUint16(8,0x0800,true);ch.setUint16(10,0,true);ch.setUint16(12,tm,true);ch.setUint16(14,dt,true);ch.setUint32(16,crc,true);ch.setUint32(20,data.length,true);ch.setUint32(24,data.length,true);ch.setUint16(28,nm.length,true);ch.setUint32(42,off,true);
+    cd.push(ch.buffer,nm);off+=30+nm.length+data.length}
+  const csz=cd.reduce((a,b)=>a+b.byteLength,0),e=new DataView(new ArrayBuffer(22));e.setUint32(0,0x06054b50,true);e.setUint16(8,files.length,true);e.setUint16(10,files.length,true);e.setUint32(12,csz,true);e.setUint32(16,off,true);
+  return new Blob([...parts,...cd,e.buffer],{type:'application/zip'})}
+const b64ToBytes=b=>{const s=atob(b),u=new Uint8Array(s.length);for(let i=0;i<s.length;i++)u[i]=s.charCodeAt(i);return u};
+const textToB64=t=>{const u=new TextEncoder().encode(t);let s='';for(let i=0;i<u.length;i+=0x8000)s+=String.fromCharCode.apply(null,u.subarray(i,i+0x8000));return btoa(s)};
+function dl(name,blob){const a=el('a',{href:URL.createObjectURL(blob),download:name});document.body.append(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},2000)}
+
+/* ======================= foto ======================= */
+function prosesFoto(file){return new Promise((res,rej)=>{
+  if(!/^image\/(jpeg|png|webp|gif)$/.test(file.type))return rej(new Error('Format harus JPG, PNG, WebP, atau GIF.'));
+  if(file.size>15e6)return rej(new Error('Ukuran berkas lebih dari 15 MB.'));
+  const u=URL.createObjectURL(file),im=new Image();
+  im.onload=()=>{const M=1000,sc=Math.min(1,M/Math.max(im.width,im.height)),w=Math.round(im.width*sc),h=Math.round(im.height*sc),c=document.createElement('canvas');c.width=w;c.height=h;
+    const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,w,h);x.drawImage(im,0,0,w,h);URL.revokeObjectURL(u);
+    c.toBlob(b=>{if(!b)return rej(new Error('Gambar gagal diproses.'));const fr=new FileReader();fr.onload=()=>res({blob:b,b64:String(fr.result).split(',')[1],w,h});fr.readAsDataURL(b)},'image/jpeg',.82)};
+  im.onerror=()=>{URL.revokeObjectURL(u);rej(new Error('Berkas bukan gambar yang valid.'))};im.src=u})}
+
+/* ======================= TAB: ringkasan ======================= */
+const TABS=[['ringkasan','Ringkasan'],['data','Data tabel'],['mitra','Mitra & foto produk'],['triwulan','Arus kas triwulan'],['teks','Teks halaman & menu'],['terbit','Terbitkan']];
+function vRingkasan(m){
+  m.append(el('div',{class:'card'},el('h2',{text:'Selamat datang di Admin SIF POINT BATARA'}),
+   el('p',{class:'mut',text:'Halaman ini mengubah isi website tanpa menyentuh kode. Semua perubahan ditampung dulu di peramban ini, lalu diterbitkan sekali jalan pada tab Terbitkan (langsung ke GitHub, atau diunduh sebagai ZIP untuk diunggah ke Hostinger).'}),
+   S.loadErr.length?el('p',{class:'bad',text:'Berkas data belum terbaca: '+S.loadErr.join(', ')+'. Buka halaman ini dari alamat situs (http/https), bukan dengan klik dua kali berkasnya, supaya data dapat dimuat.'}):null));
+  const nm=S.ds.mitra.rows.length,nf=S.ds.mitra.rows.filter(r=>r.foto_produk).length,nt=new Set(S.ds.triwulan.rows.map(r=>r.komoditas)).size,nk=S.ds.konten.rows.length;
+  m.append(el('div',{class:'k'},el('div',{},el('b',{text:nm}),'mitra terdaftar (',nf,' berfoto)'),el('div',{},el('b',{text:nt}),'komoditas dengan arus kas triwulan terbit'),el('div',{},el('b',{text:nk}),'teks halaman yang diubah')));
+  m.append(el('div',{class:'card'},el('h3',{text:'Cara kerja'}),
+   el('p',{class:'mut',text:'1) Data tabel: ubah peluang, titik peta, pabrik, kecamatan, kontak, produksi, realisasi. Baris hanya tampil di website bila kolom terbit = ya.'}),
+   el('p',{class:'mut',text:'2) Mitra & foto produk: tambah pelaku usaha lokal dan unggah foto produknya (otomatis diperkecil). Foto tampil di menu Pahandep Investor.'}),
+   el('p',{class:'mut',text:'3) Arus kas triwulan: isi angka aktual per triwulan; kalkulator NPV/IRR/PBP di website langsung memakainya.'}),
+   el('p',{class:'mut',text:'4) Teks halaman & menu: ubah judul, paragraf, dan nama menu mana pun.'}),
+   el('p',{class:'mut',text:'5) Terbitkan: kirim semua perubahan sekaligus.'}),
+   el('p',{class:'mut',text:'Jangan menyimpan NIB, modal usaha, nomor telepon pribadi, atau data rahasia lain di tabel apa pun: seluruh isi folder data/ bersifat publik.'})));
+}
+
+/* ======================= TAB: data ======================= */
+function vData(m){
+  const keySel=el('select',{id:'dsSel'},DATASETS.map(([k,n])=>el('option',{value:k,text:n})));
+  const q=el('input',{type:'search',placeholder:'Cari di tabel…',id:'dsQ'}),box=el('div');
+  let page=0,PER=50;
+  const draw=()=>{const k=keySel.value,d=S.ds[k],f=q.value.trim().toLowerCase();
+    const idx=d.rows.map((r,i)=>i).filter(i=>!f||Object.values(d.rows[i]).join(' ').toLowerCase().includes(f));
+    const pages=Math.max(1,Math.ceil(idx.length/PER));page=Math.min(page,pages-1);
+    const sl=idx.slice(page*PER,page*PER+PER);
+    const head=el('tr',{},el('th',{text:'#'}),d.h.map(c=>el('th',{text:c})),el('th',{text:''}));
+    const body=sl.map(i=>{const r=d.rows[i];return el('tr',{},el('td',{class:'n',text:i+1}),d.h.map(c=>{
+        let inp;
+        if(c==='terbit')inp=el('select',{},['','ya','tidak'].map(v=>el('option',{value:v,text:v||'—',selected:r[c]===v})));
+        else if(String(r[c]).length>60||/uraian|keterangan|teks|catatan/.test(c))inp=el('textarea',{rows:2,text:r[c]});
+        else inp=el('input',{value:r[c]});
+        inp.setAttribute('aria-label',c+' baris '+(i+1));
+        inp.addEventListener('input',()=>{r[c]=inp.value;refreshDirty()});return el('td',{},inp)}),
+      el('td',{},el('button',{class:'g r',type:'button',text:'Hapus',onclick:()=>{if(confirm('Hapus baris '+(i+1)+'?')){d.rows.splice(i,1);refreshDirty();draw()}}})))});
+    box.replaceChildren(el('div',{class:'tbl'},el('table',{},el('thead',{},head),el('tbody',{},body))),
+      el('div',{class:'row',style:'margin-top:10px'},el('span',{class:'mut',text:idx.length+' baris · halaman '+(page+1)+'/'+pages}),
+        el('button',{class:'g',type:'button',text:'‹',disabled:page===0,onclick:()=>{page--;draw()}}),el('button',{class:'g',type:'button',text:'›',disabled:page>=pages-1,onclick:()=>{page++;draw()}}),
+        el('button',{class:'b',type:'button',text:'Tambah baris',onclick:()=>{const r=Object.fromEntries(d.h.map(c=>[c,''])); if('terbit' in r)r.terbit='ya'; if('status_data' in r)r.status_data='sementara';d.rows.push(r);page=Math.floor((d.rows.length-1)/PER);q.value='';refreshDirty();draw()}}),
+        el('button',{class:'g',type:'button',text:'Unduh CSV',onclick:()=>dl(k+'.csv',new Blob([csvOut(d.h,d.rows)],{type:'text/csv'}))}),
+        el('button',{class:'g',type:'button',text:'Impor CSV…',onclick:()=>{const f=el('input',{type:'file',accept:'.csv,text/csv'});f.onchange=async()=>{const t=await f.files[0].text();const p=csvParse(t);if(p.length<1)return toast('CSV kosong',1);if(!confirm('Ganti seluruh isi tabel ini dengan CSV yang dipilih?'))return;d.h=p[0];d.rows=p.slice(1).map(x=>Object.fromEntries(d.h.map((c,i)=>[c,x[i]==null?'':x[i]])));refreshDirty();draw()};f.click()}})))};
+  keySel.onchange=()=>{page=0;draw()};q.oninput=()=>{page=0;draw()};
+  m.append(el('div',{class:'card'},el('h2',{text:'Data tabel'}),el('p',{class:'mut',text:'Ubah isi langsung di sel. Kolom terbit = ya menampilkan baris di website; kosong/tidak menyembunyikannya. Tab kontak: isi nilai nomor WhatsApp, surel, dan tautan formulir.'}),
+    el('div',{class:'row'},el('label',{},'Tabel',keySel),el('label',{style:'flex:1;min-width:200px'},'Cari',q)),box));
+  draw();
+}
+
+/* ======================= TAB: mitra & foto ======================= */
+const SKALA=['Mikro','Kecil','Menengah','Besar'];
+function vMitra(m){
+  const d=S.ds.mitra,list=el('div',{class:'grid'}),form=el('div');
+  const thumb=r=>{const p=r.foto_produk;if(!p)return null;if(S.photos[p])return URL.createObjectURL(S.photos[p].blob);return /^(https:|foto\/)/.test(p)?p:null};
+  const drawList=()=>{list.replaceChildren(...(d.rows.length?d.rows.map((r,i)=>{const t=thumb(r);
+    return el('div',{class:'mc'},t?el('img',{src:t,alt:'Produk '+r.nama_usaha,loading:'lazy'}):el('div',{class:'ph',text:'Belum ada foto'}),
+     el('div',{class:'i'},el('b',{text:r.nama_usaha||'(tanpa nama)'}),el('span',{class:'mut',text:[r.produk_komoditas,r.kecamatan].filter(Boolean).join(' · ')}),
+      el('span',{},el('span',{class:'chip '+(r.terbit==='ya'?'ok':'warn'),text:r.terbit==='ya'?'Terbit':'Belum terbit'})),
+      el('div',{class:'row'},el('button',{class:'g',type:'button',text:'Ubah',onclick:()=>edit(i)}),el('button',{class:'g r',type:'button',text:'Hapus',onclick:()=>{if(confirm('Hapus mitra ini?')){const p=r.foto_produk;d.rows.splice(i,1);if(p&&S.photos[p])delete S.photos[p];refreshDirty();drawList()}}}))))}):[el('p',{class:'mut',text:'Belum ada mitra. Tekan "Tambah mitra".'})]))};
+  const edit=i=>{const isNew=i==null;
+    const r=isNew?{kode:'M-'+String(d.rows.length+1).padStart(3,'0'),skala_usaha:'Mikro',persetujuan_pelaku_usaha:'ya',terbit:'ya',status_data:'sementara',sumber:'Pendaftaran mitra (SOP-05)',periode:String(new Date().getFullYear()),satuan:'-',wilayah:'Kabupaten Barito Utara',perangkat_daerah:'DPMPTSP',tanggal_mutakhir:today()}:{...d.rows[i]};
+    let newPhoto=null;
+    const F=(name,label,opts={})=>{const inp=opts.sel?el('select',{name},opts.sel.map(v=>el('option',{value:v,text:v||'—',selected:r[name]===v}))):opts.ta?el('textarea',{name,rows:3,text:r[name]||''}):el('input',{name,value:r[name]||'',placeholder:opts.ph||''});return el('label',{style:opts.w?'grid-column:1/-1':''},label,inp)};
+    const pv=el('div'),fi=el('input',{type:'file',accept:'image/jpeg,image/png,image/webp,image/gif'});
+    const showPv=()=>{const u=newPhoto?URL.createObjectURL(newPhoto.blob):thumb(r);pv.replaceChildren(u?el('img',{class:'pv',src:u,alt:'Pratinjau foto produk'}):el('p',{class:'mut',text:'Belum ada foto.'}),
+      (u?el('button',{class:'g r',type:'button',style:'margin-top:8px',text:'Hapus foto',onclick:()=>{newPhoto=null;r.foto_produk='';showPv()}}):null))};
+    fi.onchange=async()=>{if(!fi.files[0])return;try{newPhoto=await prosesFoto(fi.files[0]);toast('Foto diperkecil ke '+newPhoto.w+'×'+newPhoto.h+' (~'+Math.round(newPhoto.blob.size/1024)+' KB)');showPv()}catch(e){toast(e.message,1)}};
+    const f=el('form',{class:'card'},el('h3',{text:isNew?'Tambah mitra':'Ubah mitra'}),
+      el('div',{style:'display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))'},
+        F('kode','Kode mitra'),F('nama_usaha','Nama usaha *'),F('bentuk_usaha','Bentuk usaha',{ph:'UD / CV / Koperasi / Perorangan'}),F('sektor','Sektor',{ph:'Pertanian, Perikanan, Industri…'}),
+        F('produk_komoditas','Produk/komoditas *',{ph:'Contoh: beras, gula aren, rotan'}),F('kapasitas','Kapasitas',{ph:'5 ton/bulan'}),F('kecamatan','Kecamatan'),F('desa','Desa/kelurahan'),
+        F('skala_usaha','Skala usaha',{sel:SKALA}),F('kebutuhan_kemitraan','Kebutuhan kemitraan',{ph:'permodalan; pemasaran; teknologi'}),
+        F('persetujuan_pelaku_usaha','Pelaku usaha setuju profil tampil',{sel:['ya','tidak']}),F('terbit','Terbit di website',{sel:['ya','tidak']}),
+        F('uraian_kemitraan','Uraian kemitraan',{ta:1,w:1})),
+      el('div',{},el('b',{text:'Foto produk'}),el('p',{class:'mut',text:'JPG/PNG/WebP. Otomatis diperkecil (maks. 1000 px) agar website tetap cepat. Foto baru tersimpan sebagai berkas di folder foto/.'}),fi,pv),
+      el('div',{class:'row'},el('button',{class:'b',type:'submit',text:'Simpan mitra'}),el('button',{class:'g',type:'button',text:'Batal',onclick:()=>{form.replaceChildren()}})));
+    showPv();
+    f.addEventListener('submit',ev=>{ev.preventDefault();const fd=new FormData(f);for(const[k,v]of fd.entries())r[k]=String(v).trim();
+      if(!r.nama_usaha||!r.produk_komoditas)return toast('Isi nama usaha dan produk/komoditas.',1);
+      if(r.persetujuan_pelaku_usaha!=='ya'&&r.terbit==='ya'){return toast('Mitra yang belum menyetujui profilnya tampil tidak boleh diterbitkan.',1)}
+      const old=isNew?'':d.rows[i].foto_produk;
+      if(newPhoto){const path='foto/'+slug(r.nama_usaha)+'-'+Date.now().toString(36)+'.jpg';S.photos[path]={blob:newPhoto.blob,b64:newPhoto.b64};r.foto_produk=path}
+      if(old&&old!==r.foto_produk&&S.photos[old])delete S.photos[old];
+      r.tanggal_mutakhir=today();d.h.forEach(c=>{if(!(c in r))r[c]=''});
+      if(isNew)d.rows.push(r);else d.rows[i]=r;refreshDirty();form.replaceChildren();drawList();toast('Mitra disimpan (belum terbit).')});
+    form.replaceChildren(f);f.scrollIntoView({behavior:'smooth',block:'start'})};
+  m.append(el('div',{class:'card'},el('h2',{text:'Mitra pelaku usaha & foto produk'}),el('p',{class:'mut',text:'Daftar pelaku usaha lokal Pahandep Investor. Foto produk yang diunggah di sini tampil pada kartu mitra dan galeri produk di menu Pahandep Investor. Jangan memasukkan NIB, modal, atau kontak pribadi.'}),el('div',{class:'row'},el('button',{class:'b',type:'button',text:'Tambah mitra',onclick:()=>edit(null)}))),form,list);
+  drawList();
+}
+
+/* ======================= TAB: triwulan ======================= */
+const CALC={jagung:['Pertanian Jagung 500 ha','Rp (ribu)',[-28083004,5140730,7414032,9821683,9673492,9481275,9240362,8945659,8591615,8172177,7680749]],batubara:['Penambangan Batubara 300 ha','US$ (ribu)',[-1921.4,5944,5818,7490,7287,7068,6834,6584,6319,6038,5742]],minyak:['Pabrik Minyak Goreng Sawit 2.500 ton','Rp (juta)',[-5240,802,1072,1613,1613,1613,1613,1613,1613,1613,1613]],ikan:['Budidaya Ikan Nila/Baung 20 ton/tahun','Rp (juta)',[-344.39,79.26,81.65,8.13,86.69,89.34,92.09,94.93,97.87,100.91,104.06]],cold:['Cold Storage 25 ton','Rp (juta)',[-1265.53,351.91,363.95,376.41,389.31,402.66,416.48,430.78,445.58,460.90,476.75]],padi:['Pabrik Penggilingan Padi Modern','Rp (ribu)',[-7462330,1223288,1638105,1690830,1745401,1801882,1860340,1920843,1983464,2048277,2115359]],karet:['Pabrik Karet Remah 5.000 ton/tahun','Rp (ribu)',[-15014290,3144198,3667050,4223099,4334967,4449865,4567823,4688866,4813014,4940278,5070665]]};
+const npv=(c,r)=>c.reduce((a,x,t)=>a+x/Math.pow(1+r,t),0);
+function irr(c){if(!(c.some(x=>x<0)&&c.some(x=>x>0)))return null;let lo=-.99,hi=10,fl=npv(c,lo);if(fl*npv(c,hi)>0)return null;for(let i=0;i<200;i++){const m=(lo+hi)/2,fm=npv(c,m);if(Math.abs(fm)<1e-9)return m;if(fl*fm<0)hi=m;else{lo=m;fl=fm}}return(lo+hi)/2}
+function pbp(c){let s=c[0];for(let t=1;t<c.length;t++){const p=s;s+=c[t];if(s>=0&&c[t]>0)return(t-1)+(-p/c[t])}return null}
+function vTriwulan(m){
+  const d=S.ds.triwulan;let k='jagung';
+  const sel=el('select',{},Object.entries(CALC).map(([v,x])=>el('option',{value:v,text:x[0]}))),per=el('input',{placeholder:'Contoh: 2026 TW III',value:'2026 TW III'}),sum=el('div',{class:'k'}),tb=el('tbody');
+  const cur={};/* key y.q -> string */
+  const load=()=>{for(const x of Object.keys(cur))delete cur[x];d.rows.filter(r=>r.komoditas===k).forEach(r=>{cur[parseInt(r.tahun_ke)+'.'+(parseInt(r.tahun_ke)===0?0:parseInt(r.triwulan))]=r.arus_kas})};
+  const base=(y,q)=>y===0?CALC[k][2][0]:CALC[k][2][y]/4;
+  const val=(y,q)=>{const v=cur[y+'.'+(y===0?0:q)];const n=parseFloat(String(v).replace(',','.'));return isFinite(n)&&v!==''&&v!=null?n:base(y,q)};
+  const calc=()=>{const c=[val(0,0)];for(let y=1;y<=10;y++)c.push([1,2,3,4].reduce((a,q)=>a+val(y,q),0));const N=npv(c,.12),I=irr(c),P=pbp(c),u=CALC[k][1];
+    const mul=/juta/.test(u)?1e6:1e3,x=N*mul,a=Math.abs(x),pre=/US/.test(u)?'US$':'Rp',nf=(z,s)=>Math.abs(z).toLocaleString('id-ID',{maximumFractionDigits:2})+' '+s;
+    const ns=(x<0?'−':'+')+pre+(a>=1e12?nf(x/1e12,'triliun'):a>=1e9?nf(x/1e9,'miliar'):a>=1e6?nf(x/1e6,'juta'):nf(x,''));
+    sum.replaceChildren(el('div',{},el('b',{text:ns}),'NPV (12%)'),el('div',{},el('b',{text:I==null?'N/A':(I*100).toLocaleString('id-ID',{maximumFractionDigits:1})+'%'}),'IRR'),el('div',{},el('b',{text:P==null?'>10 thn':Math.floor(P)+' thn '+Math.round((P-Math.floor(P))*12)+' bln'}),'PBP'))};
+  const draw=()=>{const rows=[];
+    const mk=(y,q)=>{const key=y+'.'+(y===0?0:q);const i=el('input',{type:'number',step:'any',value:cur[key]!=null?cur[key]:'',placeholder:String(Number(base(y,q).toFixed(2))),'aria-label':'Tahun '+y+' triwulan '+q});i.oninput=()=>{if(i.value==='')delete cur[key];else cur[key]=i.value;calc()};return i};
+    rows.push(el('tr',{},el('td',{text:'Y0 (investasi)'}),el('td',{colspan:4},mk(0,0))));
+    for(let y=1;y<=10;y++)rows.push(el('tr',{},el('td',{text:'Y'+y}),[1,2,3,4].map(q=>el('td',{},mk(y,q)))));
+    tb.replaceChildren(...rows);calc()};
+  sel.onchange=()=>{k=sel.value;load();draw()};
+  const simpan=()=>{d.rows=d.rows.filter(r=>r.komoditas!==k);const p=per.value.trim()||'2026';
+    for(const[key,v]of Object.entries(cur)){const[y,q]=key.split('.');const n=parseFloat(String(v).replace(',','.'));if(!isFinite(n))continue;
+      d.rows.push({komoditas:k,tahun_ke:y,triwulan:y==='0'?'0':q,arus_kas:String(n),periode:p,sumber:'Laporan realisasi usaha (verifikasi DPMPTSP)',status_data:'sementara',nomor_ba:'',tanggal_mutakhir:today(),terbit:'ya'})}
+    refreshDirty();toast('Arus kas '+CALC[k][0]+' disimpan (belum terbit).')};
+  m.append(el('div',{class:'card'},el('h2',{text:'Arus kas triwulan → NPV / IRR / PBP otomatis'}),
+    el('p',{class:'mut',text:'Isi angka aktual per triwulan. Sel kosong memakai seperempat angka tahunan Pra-FS (ditampilkan sebagai petunjuk abu-abu). Setelah diterbitkan, kalkulator di website langsung memakainya.'}),
+    el('div',{class:'row'},el('label',{style:'min-width:260px'},'Komoditas',sel),el('label',{},'Periode data',per)),sum,
+    el('div',{class:'tbl'},el('table',{class:'kt'},el('thead',{},el('tr',{},el('th',{text:'Tahun'}),el('th',{text:'Triwulan 1'}),el('th',{text:'Triwulan 2'}),el('th',{text:'Triwulan 3'}),el('th',{text:'Triwulan 4'}))),tb)),
+    el('p',{class:'mut',text:'Satuan mengikuti komoditas: Rp ribu (jagung, padi, karet), Rp juta (minyak goreng, ikan, cold storage), US$ ribu (batubara).'}),
+    el('div',{class:'row'},el('button',{class:'b',type:'button',text:'Simpan komoditas ini',onclick:simpan}),el('button',{class:'g r',type:'button',text:'Hapus data terbit komoditas ini',onclick:()=>{if(confirm('Kembalikan ke Pra-FS?')){d.rows=d.rows.filter(r=>r.komoditas!==k);load();draw();refreshDirty()}}}))));
+  load();draw();
+}
+
+/* ======================= TAB: teks halaman ======================= */
+let TEKS=null;
+const LEAF=new Set(['H1','H2','H3','H4','P','SPAN','A','LI','TD','TH','SMALL','LABEL','BUTTON','DT','DD','B','I','EM','FIGCAPTION','SUMMARY','STRONG']);
+function pathSel(e,doc){const parts=[];let n=e;while(n&&n!==doc.body){if(n.id&&/^[A-Za-z][\w-]*$/.test(n.id)){parts.unshift('#'+n.id);return parts.join(' > ')}
+    if(n.tagName==='SECTION'&&n.dataset&&n.dataset.panel){parts.unshift('section[data-panel="'+n.dataset.panel+'"]');return parts.join(' > ')}
+    const sib=[...n.parentNode.children];parts.unshift(n.tagName.toLowerCase()+':nth-child('+(sib.indexOf(n)+1)+')');n=n.parentNode}
+  parts.unshift('body');return parts.join(' > ')}
+async function scanTeks(){
+  const t=await (await fetch('index.html',{cache:'no-store'})).text();const doc=new DOMParser().parseFromString(t,'text/html');
+  const out=[];doc.querySelectorAll('header,nav.tabs,main,footer').forEach(root=>{root.querySelectorAll('*').forEach(e=>{
+    if(!LEAF.has(e.tagName)||e.children.length||e.closest('script,style,svg,select,noscript,template,option'))return;
+    const tx=e.textContent.replace(/\s+/g,' ').trim();if(tx.length<2||/^[\d.,\s%·\-–+]+$/.test(tx))return;
+    const sec=e.closest('section[data-panel]');const grp=sec?'Halaman: '+sec.dataset.panel:e.closest('nav')?'Menu navigasi':e.closest('footer')?'Footer':'Header / beranda';
+    const sel=pathSel(e,doc);try{if(doc.querySelector(sel)!==e)return}catch(_){return}
+    out.push({sel,tx,grp})})});
+  return out}
+async function vTeks(m){
+  m.append(el('p',{class:'mut',text:'Memindai teks website…'}));
+  if(!TEKS){try{TEKS=await scanTeks()}catch(e){m.replaceChildren(el('div',{class:'card'},el('p',{class:'bad',text:'Gagal memindai index.html: '+e.message+'. Buka admin dari alamat situs (bukan file lokal).'})));return}}
+  const d=S.ds.konten,grps=['(semua)',...new Set(TEKS.map(x=>x.grp))];
+  const g=el('select',{},grps.map(x=>el('option',{value:x,text:x}))),q=el('input',{type:'search',placeholder:'Cari teks…'}),box=el('div',{class:'grid',style:'grid-template-columns:1fr'});
+  const draw=()=>{const f=q.value.trim().toLowerCase(),L=TEKS.filter(x=>(g.value==='(semua)'||x.grp===g.value)&&(!f||x.tx.toLowerCase().includes(f))).slice(0,120);
+    box.replaceChildren(...L.map(x=>{const row=d.rows.find(r=>r.selektor===x.sel);const ta=el('textarea',{rows:Math.min(5,Math.max(1,Math.ceil((row?row.teks:x.tx).length/90))),'aria-label':'Teks: '+x.tx.slice(0,40)});ta.value=row?row.teks:x.tx;
+      ta.oninput=()=>{const v=ta.value.replace(/\s+/g,' ').trim();const i=d.rows.findIndex(r=>r.selektor===x.sel);
+        if(!v||v===x.tx){if(i>=0)d.rows.splice(i,1)}else if(i>=0){d.rows[i].teks=v;d.rows[i].terbit='ya'}else d.rows.push({selektor:x.sel,teks:v,terbit:'ya'});refreshDirty()};
+      return el('div',{class:'card',style:'padding:10px'},el('span',{class:'mut',text:x.grp+(row?' · diubah':'')}),ta,row?el('button',{class:'g',type:'button',text:'Kembalikan ke teks asli',onclick:()=>{d.rows=d.rows.filter(r=>r.selektor!==x.sel);refreshDirty();draw()}}):null)}),
+      L.length===120?el('p',{class:'mut',text:'Menampilkan 120 teks pertama. Persempit dengan pencarian.'}):null)};
+  g.onchange=q.oninput=draw;
+  m.replaceChildren(el('div',{class:'card'},el('h2',{text:'Teks halaman & menu'}),el('p',{class:'mut',text:'Ubah judul, paragraf, label tombol, dan nama menu mana pun. Hanya teks polos (bukan tautan/gambar). Ditemukan '+TEKS.length+' teks. Kosongkan atau samakan dengan aslinya untuk membatalkan.'}),el('div',{class:'row'},el('label',{},'Bagian',g),el('label',{style:'flex:1;min-width:200px'},'Cari',q))),box);
+  draw();
+}
+
+/* ======================= TAB: terbitkan ======================= */
+async function ghReq(method,path,body){const r=await fetch('https://api.github.com'+path,{method,headers:{Accept:'application/vnd.github+json',Authorization:'Bearer '+S.gh.token,'X-GitHub-Api-Version':'2022-11-28'},body:body?JSON.stringify(body):undefined});
+  let j=null;try{j=await r.json()}catch(_){}if(!r.ok&&r.status!==404)throw new Error((j&&j.message)||('GitHub '+r.status));return{status:r.status,j}}
+function vTerbit(m){
+  const fl=dirtyFiles(),list=el('div',{class:'card'},el('h3',{text:'Berkas yang akan diterbitkan'}),fl.length?el('ul',{},fl.map(f=>el('li',{text:f.path+(f.photo?' (foto)':'')}))):el('p',{class:'mut',text:'Tidak ada perubahan.'}));
+  const st=el('pre',{id:'ghLog'});
+  const inp=(k,label,type,ph)=>el('label',{},label,el('input',{type:type||'text',value:S.gh[k],placeholder:ph||'',autocomplete:'off',oninput:e=>{S.gh[k]=e.target.value.trim()}}));
+  const pub=el('button',{class:'b',type:'button',text:'Terbitkan ke GitHub',disabled:!fl.length,onclick:async()=>{
+    const g=S.gh;if(!g.owner||!g.repo||!g.token)return toast('Isi pemilik, repositori, dan token.',1);pub.disabled=true;st.textContent='';
+    const log=t=>{st.textContent+=t+'\n'};let ok=0;
+    try{for(const f of fl){log('Mengirim '+f.path+' …');const u='/repos/'+encodeURIComponent(g.owner)+'/'+encodeURIComponent(g.repo)+'/contents/'+f.path.split('/').map(encodeURIComponent).join('/');
+        const ex=await ghReq('GET',u+'?ref='+encodeURIComponent(g.branch||'main'));
+        await ghReq('PUT',u,{message:'Admin: perbarui '+f.path,content:f.photo?f.b64:textToB64(f.text),branch:g.branch||'main',sha:ex.status===200?ex.j.sha:undefined});ok++;log('  selesai')}
+      log('\nSEMUA TERKIRIM ('+ok+' berkas). Situs akan terbarui otomatis dalam 1–2 menit (GitHub Pages / Vercel / Hostinger Git).');
+      for(const f of fl){if(f.photo)S.origPhotos[f.path]=1;else S.orig[f.k]=f.text}for(const p of Object.keys(S.photos))delete S.photos[p];refreshDirty();toast('Berhasil diterbitkan ke GitHub.')}
+    catch(e){log('\nGAGAL: '+e.message+'\nBerkas yang sudah terkirim tidak ikut dibatalkan; ulangi saja, hanya yang tersisa akan dikirim ulang.');toast(e.message,1);
+      /* tandai yang sukses sebagai sudah terbit */ }
+    pub.disabled=false;}});
+  const zip=el('button',{class:'b',type:'button',text:'Unduh ZIP perubahan (untuk Hostinger)',disabled:!fl.length,onclick:()=>{const enc=new TextEncoder();
+    const files=fl.map(f=>({path:f.path,bytes:f.photo?b64ToBytes(f.b64):enc.encode(f.text)}));dl('perubahan-sif-'+today()+'.zip',makeZip(files));
+    toast('ZIP diunduh. Ekstrak ke public_html agar folder data/ dan foto/ tertimpa.')}});
+  const mark=el('button',{class:'g',type:'button',text:'Tandai sudah diunggah manual',disabled:!fl.length,onclick:()=>{for(const f of fl){if(f.photo)S.origPhotos[f.path]=1;else S.orig[f.k]=f.text}for(const p of Object.keys(S.photos)){/* simpan di memori sebagai foto sudah terbit */}S.photos={};refreshDirty();show('terbit')}});
+  m.append(list,
+    el('div',{class:'card'},el('h2',{text:'Opsi A · GitHub (otomatis, untuk GitHub Pages / Vercel / Hostinger-Git)'}),
+     el('p',{class:'mut',text:'Admin mengirim berkas langsung ke repositori GitHub situs ini. Buat token di GitHub: Settings → Developer settings → Fine-grained tokens → pilih repositori situs, izin "Contents: Read and write". Token hanya disimpan di memori halaman ini dan hilang saat tab ditutup.'}),
+     el('div',{class:'row'},inp('owner','Pemilik (akun/organisasi)','text','contoh: dpmptsp-batara'),inp('repo','Nama repositori','text','contoh: sif-point-batara'),inp('branch','Cabang','text','main'),inp('token','Token GitHub','password','github_pat_…')),
+     el('div',{class:'row'},pub),st),
+    el('div',{class:'card'},el('h2',{text:'Opsi B · Unduh ZIP (Hostinger tanpa Git)'}),el('p',{class:'mut',text:'Mengunduh hanya berkas yang berubah, dengan struktur folder yang benar. Ekstrak ke public_html lewat File Manager Hostinger (timpa berkas yang ada).'}),el('div',{class:'row'},zip,mark)));
+}
+
+/* ======================= shell ======================= */
+async function show(t){S.tab=t;const nav=$('#nav');nav.replaceChildren(...TABS.map(([k,n])=>el('button',{type:'button',role:'tab','aria-selected':k===t,text:n,onclick:()=>show(k)})));
+  const m=$('#main');m.replaceChildren();({ringkasan:vRingkasan,data:vData,mitra:vMitra,triwulan:vTriwulan,teks:vTeks,terbit:vTerbit})[t](m);refreshDirty()}
+loadAll().then(()=>show('ringkasan'));
+})();
+</script>
+</body>
+</html>

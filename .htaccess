@@ -1,0 +1,31 @@
+# Hostinger (Apache/LiteSpeed)
+Options -Indexes
+AddDefaultCharset UTF-8
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/csv application/javascript application/json image/svg+xml
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType text/csv "access plus 0 seconds"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  <Files "admin.html">
+    Header set X-Robots-Tag "noindex, nofollow"
+    Header set Cache-Control "no-store"
+  </Files>
+</IfModule>
+
+# ANJURAN KEAMANAN (opsional): kunci admin.html dengan sandi.
+# 1) buat berkas .htpasswd (hPanel > Advanced > Password Protect Directories atau generator htpasswd),
+# 2) hapus tanda # pada 6 baris berikut dan sesuaikan jalur AuthUserFile.
+# <Files "admin.html">
+#   AuthType Basic
+#   AuthName "Admin SIF POINT BATARA"
+#   AuthUserFile /home/USERNAME/.htpasswd
+#   Require valid-user
+# </Files>
